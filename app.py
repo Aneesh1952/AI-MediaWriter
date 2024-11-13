@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import requests
 
 app = Flask(__name__)
+
+# Enable CORS
+CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins; replace "*" with specific domains for more security
 
 # Replace with your Hugging Face API key
 API_KEY = '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'
